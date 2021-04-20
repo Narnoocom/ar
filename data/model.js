@@ -10,7 +10,7 @@ window.onload = () => {
     }
 
     if (method === 'static') {
-        // first get current user location
+        /*// first get current user location
         return navigator.geolocation.getCurrentPosition(function (position) {
 
             console.log(position.coords);
@@ -19,7 +19,7 @@ window.onload = () => {
            /* dynamicLoadPlaces(position.coords)
                 .then((places) => {
                     renderPlaces(places);
-                })*/
+                })
         },
             (err) => console.error('Error in retrieving position', err),
             {
@@ -27,7 +27,20 @@ window.onload = () => {
                 maximumAge: 0,
                 timeout: 27000,
             }
-        );
+        );*/
+
+       
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        showPosition(position) {
+            console.log("Latitude: " + position.coords.latitude +
+            "Longitude: " + position.coords.longitude)
+          }
+         
     }
 };
 
