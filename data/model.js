@@ -4,7 +4,7 @@ window.onload = () => {
     // if you want to statically add places, de-comment following line:
     // method = 'static';
     if (method === 'static') {
-
+        console.log("static starting");
         let places = staticLoadPlaces();
         return renderPlaces(places);
     }
