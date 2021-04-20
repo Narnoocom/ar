@@ -4,19 +4,22 @@ window.onload = () => {
     // if you want to statically add places, de-comment following line:
     // method = 'static';
     if (method === 'static') {
+
         let places = staticLoadPlaces();
         return renderPlaces(places);
     }
 
-    /*if (method !== 'static') {
+    if (method === 'static') {
         // first get current user location
         return navigator.geolocation.getCurrentPosition(function (position) {
 
+            alert(position.coords);
+
             // than use it to load from remote APIs some places nearby
-            dynamicLoadPlaces(position.coords)
+           /* dynamicLoadPlaces(position.coords)
                 .then((places) => {
                     renderPlaces(places);
-                })
+                })*/
         },
             (err) => console.error('Error in retrieving position', err),
             {
@@ -25,7 +28,7 @@ window.onload = () => {
                 timeout: 27000,
             }
         );
-    }*/
+    }
 };
 
 function staticLoadPlaces() {
