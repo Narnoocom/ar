@@ -11,7 +11,7 @@ window.onload = () => {
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
-        
+
         let places = staticLoadPlaces();
         return renderPlaces(places);
     }
@@ -54,15 +54,15 @@ function staticLoadPlaces() {
         {
             name: "Place one",
             location: {
-                lat: -16.905268, // change here latitude if using static data
-                lng: 145.724300, // change here longitude if using static data
+                lat: -16.904783, // change here latitude if using static data
+                lng: 145.124622, // change here longitude if using static data
             }
         },
         {
             name: "Place two",
             location: {
-                lat: -16.90483, // change here latitude if using static data
-                lng: 145.72460, // change here longitude if using static data
+                lat: -16.904248, // change here latitude if using static data
+                lng: 145.724616, // change here longitude if using static data
             }
         },
     ];
