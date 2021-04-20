@@ -31,6 +31,7 @@ window.onload = () => {
 
        
         if (navigator.geolocation) {
+            console.log("start geolocation");
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
             console.log("Geolocation is not supported by this browser.");
