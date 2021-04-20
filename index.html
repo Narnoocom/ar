@@ -13,13 +13,13 @@
     </script> -->
 
 
-    <!-- Dynamically add places from Javascript sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;-->
+    <!-- Dynamically add places from Javascript -->
     <script src="data/model.js"></script>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene vr-mode-ui="enabled: false" embedded
-        arjs='sourceType: webcam;  videoTexture: true; debugUIEnabled: false;'>
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; videoTexture: true; debugUIEnabled: false;'>
         <a-camera 
         rotation-reader
         gps-camera = "minDistance: 5; maxDistance: 700;" 
