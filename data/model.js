@@ -36,7 +36,7 @@ window.onload = () => {
             console.log("Geolocation is not supported by this browser.");
         }
 
-        showPosition(position) {
+        function showPosition(position) {
             console.log("Latitude: " + position.coords.latitude +
             "Longitude: " + position.coords.longitude)
           }
