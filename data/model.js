@@ -13,7 +13,7 @@ window.onload = () => {
         // first get current user location
         return navigator.geolocation.getCurrentPosition(function (position) {
 
-            alert(position.coords);
+            console.log(position.coords);
 
             // than use it to load from remote APIs some places nearby
            /* dynamicLoadPlaces(position.coords)
