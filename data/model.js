@@ -5,9 +5,21 @@ window.onload = () => {
     // method = 'static';
     if (method === 'static') {
         console.log("static starting");
+        if (navigator.geolocation) {
+            console.log("start geolocation");
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+        
         let places = staticLoadPlaces();
         return renderPlaces(places);
     }
+
+    function showPosition(position) {
+        console.log("Latitude: " + position.coords.latitude +
+        "Longitude: " + position.coords.longitude)
+      }
 
     if (method === 'static') {
         /*// first get current user location
@@ -30,17 +42,9 @@ window.onload = () => {
         );*/
 
        
-        if (navigator.geolocation) {
-            console.log("start geolocation");
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            console.log("Geolocation is not supported by this browser.");
-        }
+        
 
-        function showPosition(position) {
-            console.log("Latitude: " + position.coords.latitude +
-            "Longitude: " + position.coords.longitude)
-          }
+        
          
     }
 };
