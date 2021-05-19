@@ -54,8 +54,8 @@ function staticLoadPlaces() {
         {
             name: "Place one",
             location: {
-                lat: -26.805883, // change here latitude if using static data
-                lng: 153.132622, // change here longitude if using static data
+                lat: -26.805466, // change here latitude if using static data
+                lng: 153.132156, // change here longitude if using static data
             }
         },
         {
@@ -111,11 +111,11 @@ function renderPlaces(places) {
         let text = document.createElement('a-link');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         text.setAttribute('title', place.name);
-        text.setAttribute('href', 'http://www.example.com/');
+       //text.setAttribute('href', 'http://www.example.com/');
         text.setAttribute('scale', '15 15 15');
 
         text.addEventListener('loaded', () => {
-            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded', { detail: { component: this.el }}))
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
         });
 
         scene.appendChild(text);
