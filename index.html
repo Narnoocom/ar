@@ -19,11 +19,9 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene vr-mode-ui="enabled: false" embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; videoTexture: true; debugUIEnabled: false;'>
-        <a-camera 
-        rotation-reader
-        gps-camera = "minDistance: 5; maxDistance: 700;" 
-        >
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+
+        <a-camera gps-camera rotation-reader>
         </a-camera>
     </a-scene>
 </body>
@@ -34,10 +32,10 @@
 		embedded
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'>
     <a-entity 
-        gltf-model="./assets/magnemite/scene.gltf" 
+        gltf-model="./assets/img/map-marker.png" 
         rotation="0 180 0" 
         scale="0.05 0.05 0.05" 
-        gps-entity-place="longitude: 153.132560; latitude: -26.805815;"
+        gps-entity-place="longitude: 153.132622; latitude: -26.805883;"
         animation-mixer/>
         <a-camera gps-camera rotation-reader></a-camera>
 	</a-scene>
