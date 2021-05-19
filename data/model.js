@@ -54,15 +54,15 @@ function staticLoadPlaces() {
         {
             name: "Place one",
             location: {
-                lat: -16.904783, // change here latitude if using static data
-                lng: 145.124622, // change here longitude if using static data
+                lat: -26.805883, // change here latitude if using static data
+                lng: 153.132622, // change here longitude if using static data
             }
         },
         {
             name: "Place two",
             location: {
-                lat: -16.904248, // change here latitude if using static data
-                lng: 145.724616, // change here longitude if using static data
+                lat: -26.805528, // change here latitude if using static data
+                lng: 153.132597, // change here longitude if using static data
             }
         },
     ];
