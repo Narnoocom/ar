@@ -107,12 +107,18 @@ function renderPlaces(places) {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
-        // add place name
+        /* add place name
         let text = document.createElement('a-link');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         text.setAttribute('title', place.name);
        //text.setAttribute('href', 'http://www.example.com/');
-        text.setAttribute('scale', '15 15 15');
+        text.setAttribute('scale', '15 15 15');*/
+
+        let text = document.createElement('a-box');
+        text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        text.setAttribute('material', "color: yellow");
+        text.setAttribute('position', "0 30 0");
+
 
         text.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
