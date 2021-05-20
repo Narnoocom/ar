@@ -114,10 +114,10 @@ function renderPlaces(places) {
        //text.setAttribute('href', 'http://www.example.com/');
         text.setAttribute('scale', '15 15 15');*/
 
-        let text = document.createElement('a-box');
+        let text = document.createElement('a-image');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        text.setAttribute('material', "color: yellow");
-        text.setAttribute('position', "0 30 0");
+        text.setAttribute('src', "./assets/img/map-marker.png");
+       // text.setAttribute('position', "0 30 0");
 
 
         text.addEventListener('loaded', () => {
