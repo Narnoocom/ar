@@ -53,6 +53,7 @@ function staticLoadPlaces() {
     return [
         {
             name: "Place one",
+            type: "image",
             location: {
                 lat: -26.805734, // change here latitude if using static data
                 lng: 153.132381, // change here longitude if using static data
@@ -60,6 +61,7 @@ function staticLoadPlaces() {
         },
         {
             name: "Place two",
+            type: "box",
             location: {
                 lat: -26.805796, // change here latitude if using static data
                 lng: 153.132564, // change here longitude if using static data
@@ -67,6 +69,7 @@ function staticLoadPlaces() {
         },
         {
             name: "Place three",
+            type: "map",
             location: {
                 lat: -26.805108, // change here latitude if using static data
                 lng: 153.132563, // change here longitude if using static data
@@ -74,6 +77,7 @@ function staticLoadPlaces() {
         },
         {
             name: "Place four",
+            type: "image",
             location: {
                 lat: -26.805509, // change here latitude if using static data
                 lng: 153.133234, // change here longitude if using static data
@@ -81,6 +85,7 @@ function staticLoadPlaces() {
         },
         {
             name: "Place five",
+            type: "box",
             location: {
                 lat: -26.806395, // change here latitude if using static data
                 lng: 153.132536, // change here longitude if using static data
@@ -135,18 +140,40 @@ function renderPlaces(places) {
        //text.setAttribute('href', 'http://www.example.com/');
         text.setAttribute('scale', '15 15 15');*/
 
+        if(place.type === 'box'){
+
         let text = document.createElement('a-box');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         text.setAttribute('material', "color: yellow");
         text.setAttribute('look-at',"[gps-camera]");
         text.setAttribute('position', "0 10 0");
         text.setAttribute('scale', "3 3 3");
-
-
         text.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
         });
-
         scene.appendChild(text);
+
+        }else if(place.type === 'image'){
+
+        let image = document.createElement('a-image');
+        image.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        image.setAttribute('look-at',"[gps-camera]");
+        image.setAttribute('src',"./assets/img/place_icon.png");
+        text.addEventListener('loaded', () => {
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
+        });
+        scene.appendChild(image);
+
+        } else {
+
+            let image = document.createElement('a-image');
+            image.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+            image.setAttribute('look-at',"[gps-camera]");
+            image.setAttribute('src',"./assets/img/map-marker.png");
+            text.addEventListener('loaded', () => {
+                window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
+            });
+            scene.appendChild(image);
+        }
     });
 }
