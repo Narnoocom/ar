@@ -117,6 +117,7 @@ function renderPlaces(places) {
         let text = document.createElement('a-box');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         text.setAttribute('material', "color: yellow");
+        text.setAttribute('look-at',"[gps-camera]");
         text.setAttribute('position', "0 10 0");
 
 
