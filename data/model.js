@@ -117,7 +117,7 @@ function renderPlaces(places) {
         let text = document.createElement('a-box');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         text.setAttribute('material', "color: yellow");
-        text.setAttribute('position', "0 30 0");
+        text.setAttribute('position', "0 10 0");
 
 
         text.addEventListener('loaded', () => {
