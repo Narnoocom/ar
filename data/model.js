@@ -140,6 +140,7 @@ function renderPlaces(places) {
         text.setAttribute('material', "color: yellow");
         text.setAttribute('look-at',"[gps-camera]");
         text.setAttribute('position', "0 10 0");
+        text.setAttribute('scale', "3 3 3");
 
 
         text.addEventListener('loaded', () => {
