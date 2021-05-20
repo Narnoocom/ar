@@ -159,7 +159,7 @@ function renderPlaces(places) {
         image.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         image.setAttribute('look-at',"[gps-camera]");
         image.setAttribute('src',"./assets/img/place_icon.png");
-        text.addEventListener('loaded', () => {
+        image.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
         });
         scene.appendChild(image);
@@ -170,7 +170,7 @@ function renderPlaces(places) {
             image.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
             image.setAttribute('look-at',"[gps-camera]");
             image.setAttribute('src',"./assets/img/map-marker.png");
-            text.addEventListener('loaded', () => {
+            image.addEventListener('loaded', () => {
                 window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
             });
             scene.appendChild(image);
