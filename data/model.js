@@ -54,15 +54,15 @@ function staticLoadPlaces() {
         {
             name: "Place one",
             location: {
-                lat: -26.805466, // change here latitude if using static data
-                lng: 153.132156, // change here longitude if using static data
+                lat: -26.806081, // change here latitude if using static data
+                lng: 153.132534, // change here longitude if using static data
             }
         },
         {
             name: "Place two",
             location: {
-                lat: -26.805528, // change here latitude if using static data
-                lng: 153.132597, // change here longitude if using static data
+                lat: -26.805174, // change here latitude if using static data
+                lng: 153.132591, // change here longitude if using static data
             }
         },
     ];
@@ -114,10 +114,10 @@ function renderPlaces(places) {
        //text.setAttribute('href', 'http://www.example.com/');
         text.setAttribute('scale', '15 15 15');*/
 
-        let text = document.createElement('a-image');
+        let text = document.createElement('a-box');
         text.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        text.setAttribute('src', "./assets/img/map-marker.png");
-       // text.setAttribute('position', "0 30 0");
+        text.setAttribute('material', "color: yellow");
+        text.setAttribute('position', "0 30 0");
 
 
         text.addEventListener('loaded', () => {
