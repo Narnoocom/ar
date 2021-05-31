@@ -155,14 +155,23 @@ function renderPlaces(places) {
 
         }else if(place.type === 'image'){
 
-        let image = document.createElement('a-image');
+            let html = document.createElement('a-entity');
+            html.setAttribute('htmlembed');
+            html.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+            html.setAttribute('look-at',"[gps-camera]");
+            html.innerHTML = '<h1>An Example</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><img src="./assets/img/place_icon.png" alt="image">';
+            html.addEventListener('loaded', () => {
+                window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
+            });
+            scene.appendChild(html);
+        /*let image = document.createElement('a-image');
         image.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         image.setAttribute('look-at',"[gps-camera]");
         image.setAttribute('src',"./assets/img/place_icon.png");
         image.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')) //{ detail: { component: this.el }}
         });
-        scene.appendChild(image);
+        scene.appendChild(image);*/
 
         } else {
 
